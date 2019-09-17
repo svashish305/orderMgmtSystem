@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material';
 
-import { Issue } from '../../issue.model';
-import { IssueService } from '../../issue.service';
+import { Order } from '../../order.model';
+import { OrderService } from '../../order.service';
 
 @Component({
   selector: 'app-list',
@@ -12,32 +12,32 @@ import { IssueService } from '../../issue.service';
 })
 export class ListComponent implements OnInit {
 
-  issues: Issue[];
-  displayedColumns = ['title', 'responsible', 'severity', 'status', 'actions'];
+  orders: Order[];
+  displayedColumns = ['number', 'due_date', 'customer_buyer_name', 'customer_address', 'customer_phone', 'order_total', 'actions'];
 
-  constructor(private issueService: IssueService, private router: Router) { }
+  constructor(private orderService: OrderService, private router: Router) { }
 
   ngOnInit() {
-    this.fetchIssues();
+    this.fetchOrders();
   }
 
-  fetchIssues() {
-    this.issueService
-    .getIssues()
-    .subscribe((data: Issue[]) => {
-      this.issues = data;
+  fetchOrders() {
+    this.orderService
+    .getOrders()
+    .subscribe((data: Order[]) => {
+      this.orders = data;
       console.log('Data requested ... ');
-      console.log(this.issues);
+      console.log(this.orders);
     });
   }
 
-  editIssue(id) {
+  editOrder(id) {
     this.router.navigate([`/edit/${id}`]);
   }
 
-  deleteIssue(id) {
-    this.issueService.deleteIssue(id).subscribe(() => {
-      this.fetchIssues();
+  deleteOrder(id) {
+    this.orderService.deleteOrder(id).subscribe(() => {
+      this.fetchOrders();
     });
   }
 

@@ -2,32 +2,33 @@
   <br>
   <mat-card>
     <section class="mat-typography">
-      <h3>Create A New Issue</h3>
+      <h3>Create A New Order</h3>
     </section>
     <mat-divider></mat-divider>
     <br>
     <form [formGroup]="createForm" class="create-form">
       <mat-form-field class="field-full-width">
-        <input matInput placeholder="Issue Title" formControlName="title" #title>
-
+        <input matInput placeholder="Order Number" formControlName="number" #number>
       </mat-form-field>
       <mat-form-field class="field-full-width">
-        <input matInput placeholder="Responsible" formControlName="responsible" #responsible>
+        <input matInput placeholder="Due Date" formControlName="due_date" #due_date>
       </mat-form-field>
       <mat-form-field class="field-full-width">
-        <textarea matInput placeholder="Description" formControlName="description" #description></textarea>
+        <input matInput placeholder="Customer Buyer Name" formControlName="customer_buyer_name" #customer_buyer_name>
       </mat-form-field>
-      <mat-form-field>
-          <mat-select placeholder="Severity" formControlName="severity" #severity>
-            <mat-option value="Low">Low</mat-option>
-            <mat-option value="Medium">Medium</mat-option>
-            <mat-option value="High">High</mat-option>
-          </mat-select>
+      <mat-form-field class="field-full-width">
+        <textarea matInput placeholder="Customer Address" formControlName="customer_address" #customer_address></textarea>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Customer Phone" formControlName="customer_phone" #customer_phone>
+      </mat-form-field>
+      <mat-form-field class="field-full-width">
+        <input matInput placeholder="Order Total" formControlName="order_total" #order_total>
       </mat-form-field>
       <mat-divider></mat-divider>
       <br><br>
       <button mat-raised-button color="accent" routerLink="/list">Back</button>&nbsp;
-      <button type="submit" (click)="addIssue(title.value, responsible.value, description.value, severity.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save</button>
+      <button type="submit" (click)="addOrder(number.value, due_date.value, customer_buyer_name.value, customer_address.value, customer_phone.value, order_total.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary">Save</button>
     </form>
   </mat-card>
 </div>

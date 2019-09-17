@@ -41,8 +41,3 @@ MEAN Stack
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## Acknowledgments
-
-* codingthesmartway.com
-* [Github @seeschweiler](github.com/seeschweiler)
-
