@@ -84,6 +84,6 @@ router.route('/orders/delete/:id').get((req, res) => {
 // app.use("/api/order", orderRoutes);
 app.use("/api/user", userRoutes);
 
-app.use('/', router);
+app.use('/api/order', router);
 
 app.listen(4000, () => console.log(`Express server running on port 4000`));

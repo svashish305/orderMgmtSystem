@@ -27,12 +27,12 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { LoginComponent } from './components/auth/login/login.component';
 
 const routes: Routes = [
-  { path: 'register', component: SignupComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create', component: CreateComponent },
   { path: 'edit/:id', component: EditComponent },
   { path: 'list', component: ListComponent },
-  { path: '', redirectTo: '/register', pathMatch: 'full'}
+  { path: '**', redirectTo: '/signup'}
 ];
 
 @NgModule({

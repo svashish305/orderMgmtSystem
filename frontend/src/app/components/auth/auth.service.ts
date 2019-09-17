@@ -29,7 +29,7 @@ export class AuthService {
   createUser(email: string, password: string) {
     const authData: AuthData = { email: email, password: password };
     this.http
-      .post("http://localhost:3000/api/user/signup", authData)
+      .post("http://localhost:4000/api/user/signup", authData)
       .subscribe(response => {
         console.log(response);
       });
@@ -39,7 +39,7 @@ export class AuthService {
     const authData: AuthData = { email: email, password: password };
     this.http
       .post<{ token: string; expiresIn: number }>(
-        "http://localhost:3000/api/user/login",
+        "http://localhost:4000/api/user/login",
         authData
       )
       .subscribe(response => {
@@ -54,7 +54,7 @@ export class AuthService {
           const expirationDate = new Date(now.getTime() + expiresInDuration * 1000);
           console.log(expirationDate);
           this.saveAuthData(token, expirationDate);
-          this.router.navigate(["/"]);
+          this.router.navigate(["/list"]);
         }
       });
   }
