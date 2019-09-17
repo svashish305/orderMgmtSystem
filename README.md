@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install
 
 ```
-NodeJS, Angular 6, MongoDB
+NodeJS, Angular 8, MongoDB
 ```
 
 ### Installing
