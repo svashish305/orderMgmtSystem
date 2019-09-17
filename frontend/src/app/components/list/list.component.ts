@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material';
 
 import { Order } from '../../order.model';
 import { OrderService } from '../../order.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-list',
@@ -15,7 +16,7 @@ export class ListComponent implements OnInit {
   orders: Order[];
   displayedColumns = ['number', 'due_date', 'customer_buyer_name', 'customer_address', 'customer_phone', 'order_total', 'actions'];
 
-  constructor(private orderService: OrderService, private router: Router) { }
+  constructor(private orderService: OrderService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.fetchOrders();
@@ -39,6 +40,10 @@ export class ListComponent implements OnInit {
     this.orderService.deleteOrder(id).subscribe(() => {
       this.fetchOrders();
     });
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   isLoading = false;
 
-  constructor(public authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) {
+  }
 
   ngOnInit() {
   }
@@ -21,6 +22,9 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.isLoading = true;
+    if (form.value.rememberMe) {
+      this.authService.autoAuthUser();
+    }
     this.authService.login(form.value.email, form.value.password);
   }
 

@@ -19,7 +19,9 @@ import { MatToolbarModule,
          MatTableModule, 
          MatDividerModule, 
          MatSnackBarModule,
+         MatCheckboxModule,
          MatProgressSpinnerModule } from '@angular/material';
+
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
@@ -53,6 +55,7 @@ const routes: Routes = [
     HttpClientModule,
     MatToolbarModule,
     MatFormFieldModule,
+    MatCheckboxModule,
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
