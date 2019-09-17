@@ -21,16 +21,16 @@ A step by step series of examples that tell you how to get a development env run
 The step will be
 
 ```
+cd backend
+npm run dev
+```
+
+Simaultaneously in other terminal tab, run mongod and open Mongo shell or Compass (GUI to observe database), in third terminal tab:
+
+```
 cd frontend 
 npm run build
 npm start
-```
-
-Simaultaneously in other terminal tab
-
-```
-cd backend
-npm run dev
 ```
 
 ## Built With
